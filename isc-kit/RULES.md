@@ -2,9 +2,9 @@
 
 ## Score
 
-Your score is the number of **valid demos your code completes in 120 seconds** on one whole Frontenac CPU node, using `scripts/score.sh`. Organizers run it 3 times and take the **median**.
+Your score is the number of **valid demos your code completes in 120 seconds** on the whole of 'frnt201', using `scripts/score.sh`. Organizers run it 3 times and take the **median**.
 
-- **Hardware:** one exclusive node of type **[NODE TYPE]** with **[N] cores**. CPU only; no GPUs.
+- **Hardware:** the whole of `frnt201` (the club's node): 2 x Intel Xeon Gold 6430, 64 cores/128 hardware threads (2 per core), 250 GB memory. CPU only; no GPUs.
 - **Demo:** announced at scoring time, one of `demo1`, `demo2` or `demo3`. Make sure your code is fast on all three.
 - **Ties:** broken by the best of the three runs.
 
@@ -52,7 +52,7 @@ Organizers review the final code. Anything that breaks these rules scores zero.
 
 1. Clone your repo at the `final` tag.
 2. Replace `doom/platform.c` and `reference/` with the official copies.
-3. On an exclusive **[NODE TYPE]** node, build with your Makefile: `make -C doom`.
+3. On `frnt201`, with the whole node reserved, build with your Makefile: `make -C doom`.
 4. Run `scripts/score.sh <demo> 120 3`.
 
 ## Also
