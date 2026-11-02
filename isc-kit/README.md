@@ -1,6 +1,6 @@
 # DOOMATHON: ISC track starter kit
 
-**Goal:** finish as many valid Doom demos as possible in **2 minutes** on one Frontenac CPU node.
+**Goal:** finish as many valid Doom demos as possible in **2 minutes** on `frnt201`, the club's node on Frontenac.
 
 A *demo* is a recorded game that Doom plays back by itself. Your team decides how to run it: how many copies, how they're compiled, how they share the CPUs. Read [RULES.md](RULES.md) before you start, and [OPTIMIZATION.md](OPTIMIZATION.md) for ideas.
 
@@ -41,9 +41,10 @@ You'll see compiler warnings. That's normal for 1990s code. The build worked if 
 
 **4. Start a job.** Never run Doom on the login node.
 ```
-salloc --time=00:30:00 --cpus-per-task=8 --mem-per-cpu=1G
+salloc --time=00:30:00 --cpus-per-task=16 --mem-per-cpu=1G
 cd ~/<your-team-repo>
 ```
+All teams share `frnt201`, so use at most 16 CPUs per job. Your practice numbers will vary while other teams are running.
 
 **5. Score yourself** (a quick 30-second, 1-run version)
 ```
@@ -51,11 +52,11 @@ scripts/score.sh demo1 30 1
 ```
 You should see something like:
 ```
-Scoring demo1: 1 run(s) of 30s on frnt201, 8 CPUs
+Scoring demo1: 1 run(s) of 30s on frnt201, 16 CPUs
   run 1: 48 valid demos, 0 invalid
 SCORE: 48 valid demo1 demos in 30s (median of 1)
 ```
-Each copy's output is in `results/run1/`. The official score is `scripts/score.sh demo1 120 3` on a whole node.
+Each copy's output is in `results/run1/`. The official score is `scripts/score.sh demo1 120 3` with the whole node reserved.
 
 **6. Save your work.** Type `exit` to leave the job, then:
 ```
